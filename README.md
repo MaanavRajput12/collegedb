@@ -59,16 +59,6 @@ erDiagram
         int user_id FK
     }
 
-    LIBRARIAN {
-        int librarian_id PK
-        string name
-        date dob
-        string email
-        string phn
-        date joining_date
-        int user_id FK
-    }
-
     COURSE {
         int course_id PK
         string course_name
@@ -145,29 +135,10 @@ erDiagram
         string subject_name
     }
 
-    RESULT {
-        int result_id PK
-        int exam_id FK
-        int student_id FK
-        int marks_obtained
-    }
-
-    LIBRARY_TRANSACTION {
-        int lt_id PK
-        string book_title
-        int student_id FK
-        int librarian_id FK
-        date issue_date
-        date due_date
-        date return_date
-        float fine_amt
-    }
-
     USER ||--o| ADMIN : has
     USER ||--o| STUDENT : has
     USER ||--o| FACULTY : has
     USER ||--o| PARENTS : has
-    USER ||--o| LIBRARIAN : has
 
     COURSE ||--o{ DEPARTMENT : contains
     COURSE ||--o{ SUBJECT : offers
@@ -185,12 +156,9 @@ erDiagram
     STUDENT ||--o{ ATTENDANCE : records
     STUDENT ||--o{ FEES : pays
     STUDENT ||--o{ RESULT : gets
-    STUDENT ||--o{ LIBRARY_TRANSACTION : borrows
 
     SUBJECT ||--o{ ATTENDANCE : tracked_for
     SUBJECT ||--o{ EXAM : evaluated_by
     SUBJECT ||--o{ FACULTY_SCHEDULE : scheduled
 
-    EXAM ||--o{ RESULT : produces
-    LIBRARIAN ||--o{ LIBRARY_TRANSACTION : manages
 ```
