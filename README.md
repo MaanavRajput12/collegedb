@@ -128,7 +128,6 @@ erDiagram
     USER ||--o| ADMIN : has
     USER ||--o| STUDENT : has
     USER ||--o| FACULTY : has
-    USER ||--o| PARENTS : has
 
     COURSE ||--o{ DEPARTMENT : contains
     COURSE ||--o{ SUBJECT : offers
