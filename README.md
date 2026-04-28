@@ -49,16 +49,6 @@ erDiagram
         int course_id FK
     }
 
-    PARENTS {
-        int parents_id PK
-        string name
-        string email
-        string phn
-        string relationship
-        int student_id FK
-        int user_id FK
-    }
-
     COURSE {
         int course_id PK
         string course_name
@@ -155,7 +145,6 @@ erDiagram
 
     STUDENT ||--o{ ATTENDANCE : records
     STUDENT ||--o{ FEES : pays
-    STUDENT ||--o{ RESULT : gets
 
     SUBJECT ||--o{ ATTENDANCE : tracked_for
     SUBJECT ||--o{ EXAM : evaluated_by
